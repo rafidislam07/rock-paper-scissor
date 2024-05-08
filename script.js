@@ -3,24 +3,51 @@ computerScore = 0
 console.log("Welcome to the ultimate game of rock paper scissor!")
 
 function getHumanChoice() {
-    userInput1 = prompt("Choose your weapon");
-    userInput = userInput1.toLowerCase();
-    userInput === "rock" ? console.log("You chose rock"):
-    userInput === "paper"? console.log("You chose paper"):
-    userInput === "scissor"? console.log("You chose scissor"):
-    console.log("You cannot choose that weapon");
+    userInput0 = prompt("Choose your weapon");
+    userInput = userInput0.toLowerCase();
+
+    switch (userInput) {
+        case ("rock"):
+            console.log("You chose rock");
+            humanSelection = "rock";
+            break;
+        case ("paper"):
+            console.log("You chose paper");
+            humanSelection = "paper";
+            break;
+        case ("scissor"):
+            console.log("You chose scissor");
+            humanSelection = "scissor";
+            break;
+        default:
+            console.log("You are forbidden from choosing that weapon")
+            humanSelection = null
+    }
 }
 getHumanChoice()
 
+
 function getComputerChoice() {
-    return Math.floor(Math.random() * 3)
+    result = Math.floor(Math.random() * 3)
+
+    switch (result) {
+        case (0):
+            console.log("The Computer chose rock");
+            computerSelection = "rock";
+            break;
+        case (1):
+            console.log("The Computer chose paper");
+            computerSelection = "paper";
+            break;
+        case (2):
+            console.log("The Computer chose scissor");
+            computerSelection = "scissor";
+            break;
+    }
 }
-rock = "The computer chose rock"
-paper = "The computer chose paper"
-scissor = "The computer chose scissor"
+getComputerChoice()
 
-result = getComputerChoice()
 
-result === 0 ? console.log(rock):
-result === 1? console.log(paper):
-console.log(scissor);
+
+
+
