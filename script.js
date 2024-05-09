@@ -2,7 +2,8 @@ humanScore = 0
 computerScore = 0
 console.log("Welcome to the ultimate game of rock paper scissor!")
 
-function getHumanChoice() {
+function playGame() {
+  function getHumanChoice() {
     userInput0 = prompt("Choose your weapon");
     userInput = userInput0.toLowerCase();
 
@@ -45,21 +46,49 @@ function getComputerChoice() {
 }
 const computerSelection = getComputerChoice()
 
-function displayResult(humanSelection, computerSelection) {
+function displayResult() {
     if (humanSelection === computerSelection) {
       console.log("It's a draw!");
+      console.log(`You: ` + humanScore)
+      console.log(`Computer: ` + computerScore);
     } else if (
-      (humanSelection === "rock" && computerSelection === "scissors") ||
+      (humanSelection === "rock" && computerSelection === "scissor") ||
       (humanSelection === "paper" && computerSelection === "rock") ||
       (humanSelection === "scissors" && computerSelection === "paper")
     ) {
-      console.log("You win!");
+      console.log("You win this round human");
+      console.log(`You: ` + ++humanScore)
+      console.log(`Computer: ` + computerScore);
     } else {
-      console.log("You lose!");
+      console.log("You lose this round pathetic human");
+      console.log(`You: ` + humanScore)
+      console.log(`Computer: ` + ++computerScore);
+
+
     }
   }
-displayResult(humanSelection, computerSelection)  
+displayResult()
+}  
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
 
 
+function victoryDeclaration() {
+  if (humanScore > computerScore) {
+    console.log("congratulations bro, you killed the computer like a motherfucking g")
+  }
+  else if(humanScore == computerScore) {
+    console.log("no one won. yall are on equal level")
+  }
+  else {
+    console.log("disgrace, the computer beat yo ass boy.")
+    console.log("lojja shorom nai monehoi")
+  }
+}
 
+victoryDeclaration()
 
+console.log("Refresh The Page To Play Again")
