@@ -1,0 +1,22 @@
+body {
+    background-color: plum;
+}
+
+
+#kamrul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 3cm;
+}
+
+#intro {
+    background-color: pink
+}
+
+#intro2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 2cm ;
+}
