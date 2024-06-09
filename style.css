@@ -3,16 +3,21 @@ body {
 }
 
 
-#kamrul {
+.choices {
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-    padding-top: 3cm;
+    padding-top: 2cm;
 }
+.choice:hover {
+    cursor:grab;
+    background-color: #081b31;
+  }
 
 #intro {
-    background-color: pink
+    background-color: pink;
+    font-size: larger;
 }
 
 #intro2 {
@@ -20,3 +25,34 @@ body {
     justify-content: center;
     padding-top: 2cm ;
 }
+
+#computeranswer1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 2cm;
+
+}
+
+#computeranswer {
+
+}
+
+#result11 {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.2cm;
+
+}
+#result1 {
+}
+
+#bul {
+    padding-top: 1cm;
+}
+
+img {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }

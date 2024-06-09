@@ -2,64 +2,68 @@ humanScore = 0
 computerScore = 0
 
 const intro = document.getElementById("intro")
-intro.textContent = "Welcome to the ultimate game of rock paper scissor!"
+intro.textContent = "Rafid and Nushy play rock paper scissor! <33"
+const btnRock = document.getElementById("rock")
+const btnPaper = document.getElementById("paper")
+const btnScissor = document.getElementById("scissor")
+const computerAnswer = document.getElementById("computeranswer")
+const result1 = document.getElementById("result1")
+const result2 = document.getElementById("result2")
+const result3 = document.getElementById("result3")
+const choices = document.querySelectorAll(".choice")
 
-function playRound() {
-  function getHumanChoice() {
-    userInput0 = prompt("Choose your weapon");
-    userInput = userInput0.toLowerCase();
 
-    switch (userInput) {
-        case ("rock"):
-            console.log("You chose rock");
-            return "rock";
-        case ("paper"):
-            console.log("You chose paper");
-            return "paper";
-        case ("scissor"):
-            console.log("You chose scissor");
-            return "scissor";
-        default:
-            console.log("You are forbidden from choosing that weapon")
-            return null
-    }
-}
-const humanSelection = getHumanChoice();
+
+
+choices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+      const humanSelection = choice.getAttribute("id")
+      playRound(humanSelection)
+
+    })
+})
+
+
 
 function getComputerChoice() {
-    result = Math.floor(Math.random() * 3)
+  result = Math.floor(Math.random() * 3)
 
-    switch (result) {
-        case (0):
-            console.log("The Computer chose rock");
-            return "rock";
-        case (1):
-            console.log("The Computer chose paper");
-            return "paper";
-        case (2):
-            console.log("The Computer chose scissor");
-            return "scissor";
-    }
+  switch (result) {
+      case (0):
+          computerAnswer.textContent = "Rafid chose rock";
+          return "rock";
+      case (1):
+          computerAnswer.textContent = "Rafid chose paper";
+          return "paper";
+      case (2):
+          computerAnswer.textContent = "Rafid chose scissor";
+          return "scissor";
+  }
 }
+
+
+function playRound(humanSelection) {
+
+
 const computerSelection = getComputerChoice()
 
 function displayResult() {
     if (humanSelection === computerSelection) {
-      console.log("It's a draw!");
-      console.log(`You: ` + humanScore)
-      console.log(`Computer: ` + computerScore);
+      result1.textContent ="It's a draw baby. we really do share the same braincell!";
+      result2.textContent = `You: ` + humanScore;
+      result3.textContent = `Rafid: ` + computerScore;
     } else if (
       (humanSelection === "rock" && computerSelection === "scissor") ||
       (humanSelection === "paper" && computerSelection === "rock") ||
-      (humanSelection === "scissors" && computerSelection === "paper")
+      (humanSelection === "scissor" && computerSelection === "paper")
     ) {
-      console.log("You win this round human");
-      console.log(`You: ` + ++humanScore)
-      console.log(`Computer: ` + computerScore);
+      result1.textContent = "youuuu winnn yayyayaya let's go babyy";
+      result2.textContent = `You: ` + ++humanScore;
+      result3.textContent = `Rafid: ` + computerScore;
     } else {
-      console.log("You lose this round pathetic human");
-      console.log(`You: ` + humanScore)
-      console.log(`Computer: ` + ++computerScore);
+      result1.textContent = "awww you didnt winn its okiee ii still love youu jaan";
+      result2.textContent =`You: ` + humanScore;
+      result3.textContent =`Rafid: ` + ++computerScore;
 
 
     }
@@ -67,22 +71,9 @@ function displayResult() {
 displayResult()
 }  
 
-function victoryDeclaration() {
-  if (humanScore > computerScore) {
-    console.log("congratulations bro, you killed the computer like a motherfucking g")
-  }
-  else if(humanScore == computerScore) {
-    console.log("no one won. yall are on equal level")
-  }
-  else {
-    console.log("disgrace, the computer beat yo ass boy.")
-    console.log("lojja shorom nai monehoi")
-  }
-}
 
-victoryDeclaration()
 
-console.log("Refresh The Page To Play Again")
+
 
 
 
