@@ -17,7 +17,7 @@ body {
 
 #intro {
     background-color: pink;
-    font-size: larger;
+    font-size:xx-large;
 }
 
 #intro2 {
@@ -43,16 +43,27 @@ body {
     padding-top: 0.2cm;
 
 }
-#result1 {
+#result1 {    display: flex;
+    justify-content: center;
 }
 
+#result2 {    display: flex;
+    justify-content: center;
+}
+#result3 {    display: flex;
+    justify-content: center;
+}
+#computeranswer {    display: flex;
+    justify-content: center;
+}
 #bul {
-    padding-top: 1cm;
+    padding-top: 1.9cm;
+
 }
 
 img {
-    height: 120px;
-    width: 120px;
+    height: 150px;
+    width: 150px;
     object-fit: cover;
     border-radius: 50%;
   }
